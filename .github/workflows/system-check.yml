@@ -1,0 +1,13 @@
+name: System Check
+
+on: [push]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run git-summary
+        run: |
+          chmod +x git-summary.sh
+          ./git-summary.sh
