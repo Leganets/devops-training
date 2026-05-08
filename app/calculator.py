@@ -21,3 +21,12 @@ def divide(a, b):
     if b == 0:
         raise ValueError("Cannot divide by zero")
     return a / b
+
+
+def broken_function():
+    """This function has a bug"""
+    x = 10
+    y = 0
+    if y == 0:
+        return 0
+    return x / y

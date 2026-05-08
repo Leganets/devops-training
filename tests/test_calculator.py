@@ -26,3 +26,9 @@ def test_divide():
 def test_divide_by_zero():
     with pytest.raises(ValueError):
         divide(10, 0)
+
+
+def test_broken_function():
+    from app.calculator import broken_function
+    result = broken_function()
+    assert result == 0  # Этот тест провалится!
