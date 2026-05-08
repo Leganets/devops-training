@@ -1,0 +1,22 @@
+name: Hello World
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print hello
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Show date
+        run: date
+
+      - name:
+        run: |
+          echo "OS: $(uname -s)"
+          echo "Kernel: $(uname -r)"
+          echo "User: $(whoami)"
