@@ -15,7 +15,7 @@ jobs:
       - name: Show date
         run: date
 
-      - name:
+      - name: Show system info
         run: |
           echo "OS: $(uname -s)"
           echo "Kernel: $(uname -r)"
