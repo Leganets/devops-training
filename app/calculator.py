@@ -27,4 +27,6 @@ def broken_function():
     """This function has a bug"""
     x = 10
     y = 0
-    return x / y  # Division by zero!
+    if y == 0:
+        return 0
+    return x / y
