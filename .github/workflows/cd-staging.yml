@@ -5,7 +5,7 @@ on:
     branches:
       - main
 
-jobsL
+jobs:
   deploy-staging:
     runs-on: ubuntu-latest
     environment: staging
