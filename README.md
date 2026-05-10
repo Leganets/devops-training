@@ -5,4 +5,4 @@
 DevOps training project with CI/CD pipelines.
 
 ## Updated from GitHub
-## CD test
+## CD test v2
