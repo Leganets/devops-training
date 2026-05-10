@@ -1,0 +1,25 @@
+name: Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: 'Commit SHA to rollback to'
+        required: true
+        type: string
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@4
+        with:
+          ref: ${{ inputs.commit_sha }}
+
+      - name: Rollback to commit
+        run: |
+          echo "Rolling back to commit ${{ inputs.commit_sha }}..."
+          echo "Application rolled back to commit ${{ inputs.commit_sha }}"

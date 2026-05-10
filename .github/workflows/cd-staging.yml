@@ -1,0 +1,20 @@
+name: CD - Staging
+
+on:
+  push:
+    branches:
+      - main
+
+jobsL
+  deploy-staging:
+    runs-on: ubuntu-latest
+    environment: staging
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@4
+
+      - name: Deploy to Staging
+        run: |
+          echo "Deploying to staging..."
+          echo "Application deployed to staging environment"
