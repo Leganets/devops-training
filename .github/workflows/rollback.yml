@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ inputs.commit_sha }}
+          fetch-depth: 0
 
       - name: Rollback to commit
         run: |
