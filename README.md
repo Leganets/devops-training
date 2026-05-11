@@ -6,3 +6,4 @@ DevOps training project with CI/CD pipelines.
 
 ## Updated from GitHub
 ## CD test v2
+## SSH deploy test
