@@ -1,4 +1,4 @@
-name: Base Docker build workflow
+name: Base Docker Build
 
 on:
   push:
@@ -29,5 +29,5 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-        - name: Verify image tags
-          run: docker images | grep devops-training
+      - name: Verify image tags
+        run: docker images | grep devops-training
