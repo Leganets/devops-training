@@ -21,6 +21,9 @@ jobs:
         with:
           context: .
           push: false
-          tags: devops-training:latest
+          tags: |
+            devops-training:latest
+            devops-training:v1.0.0
+            devops-training:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
