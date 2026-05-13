@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN apk del gcc musl-dev libffi-dev
 
 # Копируем код
-COPY app/ ./app/
+COPY app/ .
 
 # Создаём непривилегированного пользователя
 RUN adduser -D appuser
@@ -27,4 +27,4 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD wget --no-verbose --tries=1 --spider http://127.0.0.1:5000/health || exit 1
 
 # Запускаем Flask API
-CMD ["python", "app/api.py"]
+CMD ["python", "api.py"]
