@@ -66,3 +66,6 @@ jobs:
             devops-training:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Verify Image tags
+        run: docker images | grep devops-training
