@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     image: ghcr.io/leganets/devops-training:latest
-    container-name: devops-app
+    container_name: devops-app
     restart: unless-stopped
     ports:
       - "5000:5000"
