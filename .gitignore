@@ -1,1 +1,8 @@
 .venv/
+.terraform/
+*.tfstate
+*.tfstate.*
+tfplan
+*.tfplan
+crash.log
+*.tfvars

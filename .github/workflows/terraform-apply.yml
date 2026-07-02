@@ -1,0 +1,24 @@
+name: terraform-apply
+on:
+  push:
+    branches: [master]
+    paths: ["terraform/**", ".github/workflows/terraform-*.yml"]
+concurrency:
+  group: tf-apply
+  cancel-in-progress: false
+jobs:
+  apply:
+    runs-on: self-hosted
+    environment: production
+    defaults:
+      run:
+        working-directory: terraform/envs/dev
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.MINIO_ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.MINIO_SECRET_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: terraform version
+      - run: terraform init -input=false
+      - run: terraform workspace select staging || terraform workspace new staging
+      - run: terraform apply -input=false -auto-approve
