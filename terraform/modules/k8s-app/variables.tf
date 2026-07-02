@@ -2,10 +2,10 @@ variable "env" {
   type = string
 }
 variable "greeting" {
-  type = string
+  type    = string
   default = "hello"
 }
 variable "replicas" {
-  type = number
+  type    = number
   default = 1
 }

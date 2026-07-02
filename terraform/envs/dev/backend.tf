@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket  = "tfstate"
-    key     = "envs/dev/terraform.tfstate"
-    region  = "us-east-1"
+    bucket = "tfstate"
+    key    = "envs/dev/terraform.tfstate"
+    region = "us-east-1"
 
     use_lockfile                = true
     endpoints                   = { s3 = "http://localhost:9000" }
