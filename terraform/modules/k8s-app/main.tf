@@ -49,7 +49,7 @@ resource "kubernetes_deployment_v1" "web" {
       }
     }
   }
-  lifecycle { ignore_changes = [spec[0].replicas] } # <- защита от HPA (L49/L50, #22)
+  #  lifecycle { ignore_changes = [spec[0].replicas] } # <- защита от HPA (L49/L50, #22)
 }
 
 resource "kubernetes_service_v1" "web" {
